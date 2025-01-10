@@ -1,0 +1,898 @@
+:root {
+    --bg-color: #545B8E;
+    --emp-color: #434B83;
+    --led-color: #5FA927;
+    --white-color: #D9D9D9;
+    --btton-color: #BDBFC5;
+    --btton-color-2: #969393;
+    --logo-color: #232626;
+    --nintendo-logo: #db2e3c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    scroll-snap-type: y mandatory;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Public Sans', sans-serif;
+    color: var(--btton-color);
+    background-color: var(--bg-color);
+    scroll-behavior: smooth;
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+}
+
+/* HEADER -------------->>> */
+
+header {
+    width: 100%;
+    height: 12vh;
+    top: 0;
+    position: fixed;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    background-color: var(--btton-color);
+}
+
+
+/* HEADER - LOGO -------------->>> */
+
+.logo {
+    justify-self: start;
+    margin: 0 1rem 0 3rem;
+}
+
+.logo-svg {
+    width: clamp(7rem, 10vw, 9rem);
+}
+
+.logo-svg path {
+    fill: var(--logo-color);
+}
+
+.logo-svg polyline {
+    fill: var(--logo-color);
+}
+
+.logo:hover path,
+.logo:hover polyline {
+    fill: var(--emp-color);
+}
+
+/* HEADER - NAVBAR -------------->>> */
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    align-content: center;
+    background-color: var(--emp-color);
+    border-radius: 3rem;
+    padding: clamp(0.1rem, 0.2rem, 1rem) clamp(0.1rem, 0.2rem, 1rem);
+}
+
+.navbar a {
+    color: var(--btton-color);
+    font-family: 'Play';
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.navbar a:hover {
+    color: white;
+}
+
+/* HEADER - FORM -------------->>> */
+
+#menu-btton {
+    display: none;
+}
+
+header form {
+    justify-self: end;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+    margin-right: 3rem;
+    background-color: var(--emp-color);
+    padding: 0.4rem 1.4rem;
+    border-radius: 1.6rem;
+    margin-left: 1rem;
+}
+
+header input {
+    margin-right: 0.5rem;
+    background: none;
+    border: none;
+    color: var(--btton-color);
+
+    &:focus {
+        outline: none;
+    }
+}
+
+header input::placeholder {
+    color: var(--btton-color);
+}
+
+header button[type="submit"] {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    background: var(--white-color);
+    border-radius: 100%;
+    padding: 0.2rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: -0.2rem 0.1rem 0.1rem rgb(0 0 0 / 20%);
+}
+
+header button:hover {
+    background-color: var(--btton-color-2);
+}
+
+form button svg {
+    width: 1.4rem;
+    height: auto;
+}
+
+
+
+/* SECTION SELECTOR -------------------->>> */
+
+section {
+    background-color: var(--bg-color);
+    scroll-snap-align: start;
+    min-height: 100vh;
+}
+
+/* HOME -------------------->>> */
+
+section.home {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    width: 90%;
+}
+
+.product-img {
+    width: clamp(25%, 30vw, 35%);
+    margin: 3rem 0;
+}
+
+section.home figcaption {
+    width: clamp(60%, 70vw, 80%);
+}
+
+.product-logo {
+    width: 100%;
+}
+
+.product-logo path:first-child {
+    fill: var(--emp-color);
+}
+
+.product-logo path:not(:first-child) {
+    fill: var(--btton-color);
+}
+
+.product-logo polyline {
+    fill: var(--btton-color);
+}
+
+/* FEATURES ------------------->>> */
+
+section.features {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.features-img-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+}
+
+.product-img-2 {
+    width: clamp(20%, 25vw, 30%);
+    height: auto;
+}
+
+section.features figcaption {
+    font-family: 'Play';
+    font-weight: bold;
+    font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+    color: var(--led-color);
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 1rem #5FA927;
+}
+
+.features-list li {
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
+    margin: 0 2rem;
+}
+
+/* GAMES ------------------------>>> */
+
+section.games {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.cartridge-info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid var(--logo-color);
+}
+
+.cartridge-info p {
+    margin: 2rem 2rem 0;
+    font-size: 1rem;
+}
+
+.cartridge-info img {
+    width: clamp(25%, 30vw, 35%);
+}
+
+iframe {
+    width: clamp(60%, 70vw, 80%);
+    height: clamp(40%, 45vh, 50%);
+}
+
+/* PRICING ------------------------>>> */
+
+section.pricing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 88vh;
+}
+
+section.pricing img {
+    width: clamp(25%, 30vw, 35%);
+}
+
+section.pricing .price {
+    background-color: var(--emp-color);
+    border-radius: 1.3rem;
+    padding: clamp(0.4rem, 1vw, 1rem) clamp(2rem, 4vw, 4rem);
+}
+
+section.pricing p {
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: bold;
+    color: var(--white-color);
+    text-shadow:
+        0.1rem 0.1rem 1rem var(--logo-color),
+        -0.1rem 0.1rem 1rem var(--logo-color),
+        -0.1rem -0.1rem 1rem var(--logo-color),
+        0.1rem -0.1rem 1rem var(--logo-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+section.pricing a {
+    display: block;
+    color: var(--btton-color-2);
+    background-color: var(--btton-color);
+    font-family: 'Play';
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 1.3rem;
+    padding: 0 2rem;
+    box-shadow: -0.2rem 0.2rem 0.1rem rgb(0 0 0 / 20%);
+}
+
+section.pricing a:hover {
+    color: var(--emp-color);
+    background-color: var(--white-color);
+}
+
+/* FOOTER ------------------------>>> */
+
+footer {
+    width: 100%;
+    height: 10vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    background-color: var(--btton-color);
+}
+
+footer p {
+    font-size: 0.6rem;
+    text-align: center;
+    color: var(--logo-color);
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--logo-color);
+}
+
+footer a:hover {
+    color: var(--emp-color);
+}
+
+.nintendo-logo {
+    display: block;
+    margin: 0 auto;
+    width: clamp(30%, 40vw, 45%);
+}
+
+.nintendo-logo path {
+    fill: var(--logo-color);
+}
+
+.nintendo-logo:hover path {
+    fill: var(--nintendo-logo);
+}
+
+/* MEDIA QUERIES ------------------------>>> */
+
+
+/* Low Res Mobiles */
+@media (orientation: portrait) and (height <600px) {
+
+    /* Hide header and show a menu button */
+    #menu {
+        display: none;
+    }
+
+    #menu-btton {
+        border: none;
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        right: 0;
+        margin: 1rem;
+        border-radius: 100%;
+        padding: 0.8rem;
+        background-color: var(--white-color);
+        box-shadow: -0.2rem 0.1rem 0.1rem rgb(0 0 0 / 20%);
+        width: 1.6rem;
+    }
+
+    #menu-btton svg {
+        width: fit-content;
+        height: auto;
+    }
+
+    #menu.show {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr;
+        margin-top: 0.2rem;
+        margin-right: 0.2rem;
+        height: 80vh;
+        width: auto;
+        right: 0;
+        border-radius: 1rem;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        border-radius: 0;
+        background: none;
+        gap: 0;
+    }
+
+    .navbar a {
+        color: var(--logo-color);
+        align-self: center;
+        margin: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .logo {
+        justify-self: center;
+        align-self: center;
+        margin: 0;
+    }
+
+    .logo-svg {
+        width: 9rem;
+    }
+
+    header form {
+        margin: 0 0.5rem;
+    }
+
+    /* Main Styles */
+    section.home img {
+        width: 25vh;
+    }
+
+    .features-list {
+        margin: 0 2rem;
+    }
+
+    .features-img-container {
+        margin: 0 0 0.5rem;
+    }
+
+    .product-img-2 {
+        width: 25vh;
+    }
+
+    section.games {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    .cartridge-info {
+        border: none;
+        border-bottom: 1px solid var(--logo-color);
+        margin: 0;
+    }
+
+    .cartridge-info p {
+        margin: 1rem 2rem;
+    }
+
+    iframe {
+        width: 80%;
+    }
+
+    section.pricing {
+        height: 90vh;
+    }
+
+    section.pricing img {
+        width: 25vh;
+    }
+
+    footer p {
+        font-size: 0.45rem;
+    }
+
+}
+
+
+
+/* High - Mid Mobile Res */
+@media (orientation: portrait) and (height >=600px) {
+
+    /* Hide header and show a menu button */
+    #menu {
+        display: none;
+    }
+
+    #menu-btton {
+        border: none;
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        right: 0;
+        margin: 1rem;
+        border-radius: 100%;
+        padding: 1rem;
+        background-color: var(--white-color);
+        box-shadow: -0.2rem 0.1rem 0.1rem rgb(0 0 0 / 20%);
+        width: 2rem;
+    }
+
+    #menu.show {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr;
+        margin-top: 0.2rem;
+        margin-right: 0.2rem;
+        height: 60vh;
+        width: auto;
+        right: 0;
+        border-radius: 1rem;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        border-radius: 0;
+        background: none;
+    }
+
+    .navbar a {
+        color: var(--logo-color);
+        align-self: center;
+        margin: 0.5rem;
+    }
+
+    .logo {
+        justify-self: center;
+        align-self: center;
+        margin: 0;
+    }
+
+    .logo-svg {
+        width: 9rem;
+    }
+
+    header form {
+        margin: 0 0.5rem;
+    }
+
+    /* Main Styles */
+
+    section.home img {
+        width: 25vh;
+    }
+
+    .features-list {
+        margin: 0 2rem;
+    }
+
+    .features-img-container {
+        margin: 0 0 0.5rem;
+    }
+
+    .product-img-2 {
+        width: 25vh;
+    }
+
+    section.games {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    .cartridge-info {
+        border: none;
+        border-bottom: 1px solid var(--logo-color);
+        margin: 0;
+    }
+
+    .cartridge-info p {
+        margin: 1rem 2rem;
+    }
+
+    iframe {
+        width: 80%;
+    }
+
+    section.pricing {
+        height: 90vh;
+    }
+
+    section.pricing img {
+        width: 25vh;
+    }
+
+    footer p {
+        font-size: 0.45rem;
+    }
+}
+
+/* ultra mobile res */
+@media (orientation: portrait) and (height >=2000px) {
+    html {
+        font-size: 32px;
+    }
+}
+
+
+/* Low res screens or tablets */
+@media (orientation: landscape) and (width < 768px) {
+
+    /* Hide header and show a menu button */
+    #menu {
+        display: none;
+    }
+
+    #menu-btton {
+        border: none;
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        right: 0;
+        margin: 1rem;
+        border-radius: 100%;
+        padding: 1rem;
+        background-color: var(--white-color);
+        box-shadow: -0.2rem 0.1rem 0.1rem rgb(0 0 0 / 20%);
+        width: 2rem;
+    }
+
+    #menu.show {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr;
+        margin-top: 0.2rem;
+        margin-right: 0.2rem;
+        height: 60vh;
+        width: auto;
+        right: 0;
+        border-radius: 1rem;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        border-radius: 0;
+        background: none;
+    }
+
+    .navbar a {
+        color: var(--logo-color);
+        align-self: center;
+        margin: 0.5rem;
+    }
+
+    .logo {
+        justify-self: center;
+        align-self: center;
+        margin: 0;
+    }
+
+    .logo-svg {
+        width: 9rem;
+    }
+
+    header form {
+        margin: 0 0.5rem;
+    }
+
+    /* Main Styles */
+
+    section.pricing {
+        height: 90vh;
+    }
+
+}
+
+/* Low res mobile landscape orientation or tablets */
+@media (orientation: landscape) and (height < 400px) {
+    html {
+        font-size: 8px;
+    }
+}
+
+/* Max Screen Res */
+@media (orientation: landscape) and (width > 2160px) {
+    html {
+        font-size: 32px;
+    }
+
+    .product-img {
+        width: 25vw;
+    }
+}
+
+/* Low Res Mobile */
+/* @media (max-aspect-ratio: 1/1) and (width <=768px) {
+    #menu {
+        display: none;
+    }
+
+    #menu-btton {
+        display: block;
+        position: fixed;
+        right: 0;
+        margin: 1rem;
+        border-radius: 100%;
+        padding: 0.6rem;
+        border: none;
+        background-color: var(--white-color);
+        box-shadow: -0.2rem 0.1rem 0.1rem rgb(0 0 0 / 20%);
+    }
+
+    #menu.show {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr;
+        margin-top: 0.5rem;
+        margin-right: 0.2rem;
+        height: 100%;
+        width: auto;
+        right: 0;
+        border-radius: 1rem;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: end;
+        border-radius: 0;
+        background: none;
+        margin-right: 1rem;
+    }
+
+    .navbar a {
+        font-size: 1rem;
+        color: var(--logo-color);
+        align-self: center;
+        margin: 0.5rem;
+    }
+
+    .logo {
+        justify-self: center;
+        align-self: center;
+        margin: 0;
+    }
+
+    header form {
+        margin: 0 1rem;
+    }
+
+    section.home img {
+        width: 50vw;
+    }
+
+    .features-img-container {
+        margin: 0 0 0.5rem;
+    }
+
+    .product-img-2 {
+        width: 50vw;
+    }
+
+    section.features li {
+        font-size: 0.93rem;
+    }
+
+    section.games {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    .cartridge-info {
+        border: none;
+        border-bottom: 1px solid var(--logo-color);
+        margin: 0;
+    }
+
+    .cartridge-info p {
+        margin: 1rem 2rem;
+    }
+
+    iframe {
+        width: 80%;
+    }
+
+    section.pricing {
+        height: 90vh;
+    }
+
+    section.pricing img {
+        width: 50vw;
+    }
+
+    footer p {
+        font-size: 0.35rem;
+    }
+} */
+
+/* Low Res Mobile Rotate/Tablets Screens */
+/* @media (min-aspect-ratio: 16/9) and (height <=600px) {
+    #menu {
+        display: none;
+    }
+
+    #menu-btton {
+        display: block;
+        position: fixed;
+        right: 0;
+        margin: 1rem;
+        border-radius: 100%;
+        padding: 0.6rem;
+        border: none;
+        background-color: var(--white-color);
+        box-shadow: -0.2rem 0.1rem 0.1rem rgb(0 0 0 / 20%);
+    }
+
+    #menu.show {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr;
+        margin-top: 0.5rem;
+        margin-right: 0.2rem;
+        height: 100%;
+        width: auto;
+        right: 0;
+        border-radius: 1rem;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: end;
+        border-radius: 0;
+        background: none;
+        margin-right: 1rem;
+    }
+
+    .navbar a {
+        font-size: 1rem;
+        color: var(--logo-color);
+        align-self: center;
+        margin: 0.5rem;
+    }
+
+    .logo {
+        justify-self: center;
+        align-self: center;
+        margin: 0;
+    }
+
+    header form {
+        margin: 0 1rem;
+    }
+
+    section.features li {
+        font-size: 0.8rem;
+    }
+
+    section.games p {
+        font-size: 0.9rem;
+    }
+
+    section.pricing {
+        height: 90vh;
+    }
+
+    section.pricing p {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    section.pricing img.product-img {
+        width: 25vw;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    section.pricing .price {
+        padding: 0.35rem 3rem;
+    }
+
+    footer p {
+        font-size: 0.4rem;
+    }
+} */
